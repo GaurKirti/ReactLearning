@@ -8,18 +8,21 @@ const Body = () => {
     return(
     <div className="body">
         <div className="filter">
-            <button className="filter-btn" onClick={() => {
+            <button 
+                className="filter-btn" 
+                onClick={() => {
                 const filteredList = listOfRestaurant.filter(
                     (res) => res.info.avgRating > 4
                 );
                 setListOfRestaurant(filteredList);
             }}
             >
-                Top Rated Restaurant</button>
+                Top Rated Restaurants
+            </button>
         </div>
         <div className="restaurantContainer">
             {
-                resList.map(restaurant => 
+                listOfRestaurant.map(restaurant => 
                     (<RestroCard key={restaurant.info.id} resData={restaurant}/>))
             }
         </div>
